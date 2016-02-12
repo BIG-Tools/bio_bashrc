@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+
+function acgt_cat()
+{
+	cat $1|GREP_COLORS='mt=0;32' grep --color=always A|GREP_COLORS='mt=0;31' grep --color=always T|GREP_COLORS='mt=0;34' grep --color=always C 
+
+}
