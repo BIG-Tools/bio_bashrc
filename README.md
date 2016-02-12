@@ -1,5 +1,5 @@
 #USAGE 
 
-from your bashrc or your zshrc , type : 
+from your bashrc or your zshrc , add: 
 
     source PATH/TO/bio_bashrc 
