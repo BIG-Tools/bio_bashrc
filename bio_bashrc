@@ -11,3 +11,18 @@ function reverse_complement()
 {
 	cat $1 | perl -ne '$seq = $_; $seq =~ tr/atcgATCG/tagcTAGC/;print reverse( $seq )'
 }
+
+
+# Split file.gz to multiple file.gz containing N lines
+#1 file.gz 
+#2 split size 
+# exemple :  zsplit file.gz 4 , will try to create 4 part.gz 
+function zsplit()
+{
+
+LINE_COUNT=$(zcat $1|wc -l)
+SIZE=$(echo "$LINE_COUNT/$2"|bc)
+zcat $1|split -dl $SIZE --filter='gzip >$FILE.gz'
+
+}
+
